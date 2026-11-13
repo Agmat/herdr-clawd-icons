@@ -10,7 +10,7 @@ the sidebar and the tab bar.
 Unofficial fan project, not affiliated with or endorsed by Anthropic. The
 Claude mascot is Anthropic's character. The art is adapted from
 [clawd-pet](https://github.com/abderrahimghazali/clawd-pet) (MIT, licence in
-`clawd-icons/LICENSE-clawd-pet.txt`).
+`mods/clawd-icons/LICENSE-clawd-pet.txt`).
 
 ## What you see
 
@@ -44,15 +44,16 @@ Claude mascot is Anthropic's character. The art is adapted from
 
 ## Built from
 
-- `clawd-icons/<n>.svg`, copied to `~/.config/herdr-app/clawd-icons/`. No mod,
-  no shared state, no files written.
+- `mods/clawd-icons/<n>.svg`, copied to `~/.config/herdr-app/mods/clawd-icons/`.
+  The folder holds only SVGs and the licence, no `main.js`: Herdr runs
+  nothing from it. No shared state, no files written.
 - In each mod that draws an agent's icon, before it draws `program.icon`
   (`address` is the agent's or the pane's terminal address):
 
   ```js
   if (program?.key === "claude" && address) {
     const n = [...address].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 0) % 39;
-    return image(`clawd-icons/${n}.svg`).w(size).h(size).flex_none();
+    return image(`mods/clawd-icons/${n}.svg`).w(size).h(size).flex_none();
   }
   ```
 
@@ -82,7 +83,7 @@ Claude mascot is Anthropic's character. The art is adapted from
 
 ## Done when
 
-- `~/.config/herdr-app/clawd-icons/` holds `0.svg` to `38.svg`.
+- `~/.config/herdr-app/mods/clawd-icons/` holds `0.svg` to `38.svg`.
 - `herdr-app check` passes for each patched mod and `herdr-app status` lists
   no errors.
 - With two or more Claude agents running, each shows a mascot in place of the
