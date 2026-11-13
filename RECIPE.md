@@ -45,8 +45,9 @@ Claude mascot is Anthropic's character. The art is adapted from
 ## Built from
 
 - `mods/clawd-icons/<n>.svg`, copied to `~/.config/herdr-app/mods/clawd-icons/`.
-  The folder holds only SVGs and the licence, no `main.js`: Herdr runs
-  nothing from it. No shared state, no files written.
+  Next to them, `main.js` (renders an empty `div()`) and `mod.json`
+  (`"place": "none"`) only make the folder a valid mod: no layout places
+  it, so it never starts. No shared state, no files written.
 - In each mod that draws an agent's icon, before it draws `program.icon`
   (`address` is the agent's or the pane's terminal address):
 

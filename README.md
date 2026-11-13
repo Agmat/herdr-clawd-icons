@@ -24,7 +24,7 @@ mascot.
 
 - 39 mascots. Each agent's mascot comes from its terminal address, so it never changes while the terminal lives, even across app restarts.
 - Quit Claude and start it again in the same terminal, and the same mascot comes back.
-- No mod to run, no settings, no saved state: a folder of SVGs and a 4-line patch.
+- Nothing runs in the background, no settings, no saved state: a folder of SVGs and a 4-line patch.
 - Static pixel-art SVGs in Claude orange (`#D97757`), sharp at 14 px and 16 px.
 
 ## The cast
